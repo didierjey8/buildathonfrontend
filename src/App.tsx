@@ -9,10 +9,9 @@ function App() {
   const account = useAccount();
   const { connectors, connect, status, error } = useConnect();
   const { disconnect } = useDisconnect();
-  const [activeTab, setActiveTab] = useState("learn"); // Estado para manejar tabs
-  const [phoneNumber, setPhoneNumber] = useState(""); // Estado para manejar el número de teléfono
+  const [activeTab, setActiveTab] = useState("learn");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
-  // Hook para obtener el balance del address conectado
   const { data: balanceData, refetch } = useBalance({
     address: account?.addresses?.[0],
   });
@@ -30,9 +29,8 @@ function App() {
     "Crypto Mining Basics",
   ];
 
-  // Funcionalidad para hacer fetch a un endpoint cuando se presiona el botón
   const handleCallRequest = async (topic) => {
-    const walletAddress = account?.addresses?.[0]; // Obteniendo la wallet address del usuario conectado
+    const walletAddress = account?.addresses?.[0];
 
     if (!phoneNumber) {
       alert("Please enter a valid phone number.");
@@ -170,7 +168,7 @@ function App() {
   );
 }
 
-const styles = {
+const styles: { [key: string]: React.CSSProperties } = {
   letsTalkButton: {
     backgroundColor: "#0066cc",
     color: "white",
@@ -183,7 +181,7 @@ const styles = {
   },
   container: {
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "column" as const,
     minHeight: "100vh",
     backgroundColor: "#1a1f36",
     color: "white",
@@ -193,13 +191,13 @@ const styles = {
   },
   header: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "space-between" as const,
     alignItems: "center",
     padding: "20px",
     backgroundColor: "#1a1f36",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
     borderBottom: "2px solid #0066cc",
-    flexWrap: "wrap",
+    flexWrap: "wrap" as const,
     maxWidth: "85%",
     margin: "auto",
   },
@@ -213,14 +211,14 @@ const styles = {
   },
   walletInfo: {
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "column" as const,
     alignItems: "flex-end",
-    textAlign: "right",
+    textAlign: "right" as const,
     maxWidth: "100%",
     overflow: "hidden",
   },
   address: {
-    overflowWrap: "break-word",
+    overflowWrap: "break-word" as const,
   },
   button: {
     backgroundColor: "#0066cc",
@@ -242,7 +240,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     marginTop: "20px",
-    flexWrap: "wrap",
+    flexWrap: "wrap" as const,
     maxWidth: "85%",
     margin: "auto",
     borderBottom: "2px solid #0066cc",
@@ -256,7 +254,7 @@ const styles = {
     margin: "5px",
     borderBottom: "2px solid transparent",
     fontSize: "16px",
-    textAlign: "center",
+    textAlign: "center" as const,
   },
   activeTab: {
     backgroundColor: "#1a1f36",
@@ -266,7 +264,7 @@ const styles = {
     margin: "5px",
     borderBottom: "2px solid #0066cc",
     fontSize: "16px",
-    textAlign: "center",
+    textAlign: "center" as const,
   },
   tabContent: {
     display: "flex",
@@ -277,7 +275,7 @@ const styles = {
   },
   listContainer: {
     width: "100%",
-    textAlign: "left",
+    textAlign: "left" as const,
   },
   card: {
     backgroundColor: "#202940",
@@ -286,22 +284,22 @@ const styles = {
     borderRadius: "10px",
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "space-between" as const,
     alignItems: "center",
-    flexDirection: "column",
+    flexDirection: "column" as const,
   },
   cardContentRow: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "space-between" as const,
     alignItems: "center",
     width: "100%",
-    flexDirection: "row",
+    flexDirection: "row" as const,
     padding: "10px",
   },
   topicContainer: {
     display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-start",
+    flexDirection: "column" as const,
+    alignItems: "flex-start" as const,
   },
   topicText: {
     color: "white",
@@ -315,7 +313,7 @@ const styles = {
   actionContainer: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "space-between" as const,
     width: "100%",
   },
   price: {
@@ -335,10 +333,10 @@ const styles = {
     width: "auto",
     justifyContent: "center",
     maxWidth: "300px",
-    whiteSpace: "nowrap",
+    whiteSpace: "nowrap" as const,
   },
   tradeContainer: {
-    textAlign: "center",
+    textAlign: "center" as const,
   },
   tradeButton: {
     backgroundColor: "#0066cc",
@@ -351,7 +349,7 @@ const styles = {
   },
   historyContainer: {
     marginTop: "20px",
-    textAlign: "left",
+    textAlign: "left" as const,
   },
   historyTitle: {
     borderBottom: "2px solid #0066cc",
