@@ -1,0 +1,51 @@
+.react-tel-input .flag-dropdown {
+    background-color: #ffffff;
+    /* Fondo blanco para el desplegable */
+    color: #000000;
+    /* Texto negro */
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    /* Borde gris para distinguir */
+}
+
+.react-tel-input .selected-flag {
+    background-color: #ffffff;
+    /* Fondo blanco para la bandera seleccionada */
+    color: #000000;
+    /* Texto negro */
+}
+
+.react-tel-input .country-list {
+    background-color: #ffffff;
+    /* Fondo blanco para la lista de países */
+    color: #000000;
+    /* Texto negro */
+    border: 1px solid #ccc;
+    /* Borde alrededor de la lista para mejor definición */
+    max-height: 300px;
+    /* Limitar la altura para facilitar el desplazamiento */
+    overflow-y: auto;
+    /* Permitir desplazamiento vertical si es necesario */
+}
+
+.react-tel-input .country-list .country {
+    color: #d3e3e2;
+    /* Texto negro para cada país */
+    text-align: left;
+    /* Alineación del texto */
+    padding: 8px;
+    /* Añadir padding para una mejor separación */
+}
+
+.react-tel-input .country-list .country:hover {
+    background-color: #5d2cbf;
+    /* Fondo gris claro al pasar el ratón */
+}
+
+.react-tel-input .country.highlight {
+    background-color: #e0e0e0;
+    /* Fondo gris claro cuando el país está resaltado */
+    color: #000000;
+    /* Texto negro */
+}
