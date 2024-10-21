@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "npm && vite build",
+    "build": "tsc && vite build",
     "lint": "biome check .",
     "preview": "vite preview"
   },
